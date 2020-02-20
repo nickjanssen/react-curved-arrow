@@ -1,0 +1,54 @@
+{
+  "name": "react-curved-arrow",
+  "version": "0.0.8",
+  "description": "Curvy arrows for your React project!",
+  "main": "dist/CurvedArrow.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "clean": "rm -rf dist && mkdir -p dist",
+    "serve": "babel --watch 'src' --out-dir 'dist'",
+    "prepublish": "npm run-script build"
+  },
+  "files": [
+    "/src",
+    "/dist"
+  ],
+  "author": "Nick Janssen <nick@laska.io> (https://laska.io)",
+  "license": "MIT",
+  "dependencies": {
+    "react": "16.12.0"
+  },
+  "babel": {
+    "plugins": [
+      "transform-react-jsx",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
+    ],
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "6.11.5"
+          }
+        }
+      ]
+    ],
+    "ignore": [
+      "src/test"
+    ]
+  },
+  "jest": {
+    "transform": {},
+    "rootDir": "src",
+    "verbose": true
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babel-plugin-transform-react-jsx": "^6.24.1"
+  },
+  "gitHead": "7f4bff022c71a706022c7e60d2288b222582af3d"
+}
