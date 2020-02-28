@@ -113,6 +113,7 @@ class CurvedArrow extends React.PureComponent {
           var p2y = settings.p2y - y_min;
 
           canvas.style.position = "absolute";
+          canvas.style.pointerEvents = "none";
           canvas.style.top = y_min + "px";
           canvas.style.left = x_min + "px";
           canvas.width = x_max - x_min;
