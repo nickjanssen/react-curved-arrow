@@ -40,7 +40,7 @@ import CurvedArrow from "react-curved-arrow";
 
 [Open in Playground](https://app.styledpage.com/app/-M-zcwJJQcEEOLLVgwE8)
 
-[Open in CodeSandbox](https://app.styledpage.com/app/-M-zcwJJQcEEOLLVgwE8)
+[Open in CodeSandbox](https://codesandbox.io/s/wild-wave-32jt9)
 
 Made with ❤️ by [Nick Janssen](https://twitter.com/nickjanssen_com)
 
