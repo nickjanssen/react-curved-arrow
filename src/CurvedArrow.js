@@ -1,17 +1,26 @@
 import React from "react";
 
+function bezier(p0, p1, p2, t) {
+  return p1 + (1 - t) * (1 - t) * (p0 - p1) + t * t * (p2 - p1);
+}
+// We find local min/maxes by looking at the
+// roots of the derivative of bezier(t)
+// b'(t) = 2 * (1 - t)(p1 - p0) + 2 * t (p2 - p1)
+// b'(t) = 0 when t = (p0 - p1) / (p0 - 2 * p1 + p2)
+// which exists if the divisor isn't equal to 0
 function quadraticCurveMinMax(p0, p1, p2) {
-  var min = p0;
-  var max = p2;
-  var t_step = 0.0001;
-  for (var t = t_step; t <= 1; t += t_step) {
-    var f = (1 - t) * (1 - t) * p0 + 2 * (1 - t) * t * p1 + t * t * p2;
-    if (f < min) min = f;
-    if (f > max) max = f;
+  let min = Math.min(p0, p2);
+  let max = Math.max(p0, p2);
+  if (p0 - 2 * p1 + p2 !== 0) {
+    let t = (p0 - p1) / (p0 - 2 * p1 + p2)
+    if (t > 0 && t < 1) {
+      let p_middle = bezier(p0, p1, p2, t);
+      min = Math.min(min, p_middle);
+      max = Math.max(max, p_middle);
+    }
   }
   return [Math.round(min), Math.round(max)];
 }
-
 class CurvedArrow extends React.PureComponent {
   componentWillUnmount() {
     if (this.timer) clearTimeout(this.timer);
