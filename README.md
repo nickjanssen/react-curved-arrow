@@ -1,9 +1,7 @@
-![enter image description here](https://assets.styledpage.com/react-curved-arrow/logo.png)
+![logo](https://react-curved-arrow.nickjanssen.com/logo.png)
 Fancy curved arrows for your React project! Great for tutorials and product tours!
 
 https://react-curved-arrow.nickjanssen.com/
-
-
 
 ## Installation
 
@@ -38,13 +36,13 @@ import CurvedArrow from "react-curved-arrow";
 
 ## Try it out!
 
-[Open in Playground](https://app.styledpage.com/app/-M-zcwJJQcEEOLLVgwE8)
-
 [Open in CodeSandbox](https://codesandbox.io/s/wild-wave-32jt9)
 
 Made with ❤️ by [Nick Janssen](https://twitter.com/nickjanssen_com)
 
-Also check out [Styled Page](https://styledpage.com/?ref=eam&eam=react-curved), a tool that lets you visually build React apps & components!
+## Special thanks
+
+Special thanks to [prscoelho](https://github.com/prscoelho) for his `quadraticCurveMinMax` implementation!
 
 # License
 MIT
