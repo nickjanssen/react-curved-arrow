@@ -21,6 +21,10 @@ function quadraticCurveMinMax(p0, p1, p2) {
   }
   return [Math.round(min), Math.round(max)];
 }
+function isServerSide() {
+  return typeof window === 'undefined'
+}
+
 class CurvedArrow extends React.PureComponent {
   componentWillUnmount() {
     if (this.timer) clearTimeout(this.timer);
@@ -43,6 +47,8 @@ class CurvedArrow extends React.PureComponent {
       dynamicUpdate = false,
       zIndex = 0
     } = this.props;
+    
+    if (isServerSide()) { return null }
 
     const fromElement = document.querySelector(fromSelector);
     const toElement = document.querySelector(toSelector);
