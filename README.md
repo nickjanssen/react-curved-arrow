@@ -29,6 +29,7 @@ import CurvedArrow from "react-curved-arrow";
 |middleY|number|Middle point Y position.|0|
 |width|number|Width of the arrow and arrowhead.|8|
 |color|color|Color of the arrow and arrowhead.|"black"|
+|hideUnderWidth|number|Optional. if the window width is lower then hideUnderWidth, then arrow will be hidden (display none).|0|
 |hideIfFoundSelector|DOM selector|Optional. if the arrow can find this selector, it will hide itself. Useful for product tours when you only want to show an arrow whenever a user hasn't performed an action yet such as opening a menu.||
 |debugLine|boolean|Show debug dots and lines for fromOffset, toOffset and middle vectors.|false|
 |dynamicUpdate|boolean|Automatically adjust the arrow whenever the from/to DOM elements update. Useful for dynamic content such as sliding menus or content that is within a scrolling container.|false|

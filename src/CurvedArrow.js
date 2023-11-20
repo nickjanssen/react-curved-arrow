@@ -42,6 +42,7 @@ class CurvedArrow extends React.PureComponent {
       middleY = 0,
       width = 8,
       color = "black",
+      hideUnderWidth = 0,
       hideIfFoundSelector,
       debugLine = false,
       dynamicUpdate = false,
@@ -133,6 +134,14 @@ class CurvedArrow extends React.PureComponent {
           canvas.style.left = x_min + "px";
           canvas.width = x_max - x_min;
           canvas.height = y_max - y_min;
+
+          if (hideUnderWidth > 0) {
+            if (window.matchMedia(`(max-width: ${hideUnderWidth}px)`).matches) {
+              canvas.style.display = "none";
+            } else {
+              canvas.style.display = "inline-block";
+            }
+          }
 
           if (zIndex) {
             canvas.style.zIndex = zIndex;
